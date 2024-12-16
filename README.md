@@ -13,8 +13,8 @@ It is recommended to use Node.js version 18.x or higher. and it is assumed that 
 To get started, clone the repository and install the required dependencies using the following command:
 
 ```bash
-git clone https://github.com/arnabtarwani/montu.git
-cd montu
+git clone https://github.com/arnabtarwani/montu-test.git
+cd montu-test
 pnpm install
 ```
 
