@@ -70,7 +70,7 @@ const SearchedTerm = () => {
             setSearchResults([]);
         }
         fetchSearchResults(term as string, true);
-    }, [currentTab, prevTab, term, location.pathname]);
+    }, [term, location.pathname]);
 
     const handleShowMore = () => {
         if (isLoading) return;

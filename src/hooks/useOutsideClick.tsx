@@ -1,5 +1,12 @@
 import { RefObject, useEffect } from "react";
 
+/**
+ * useOutsideClick is a custom hook that checks if the user clicks outside of a specified element.
+ * If the user clicks outside of the element, the provided callback function is called.
+ * @param {RefObject<HTMLElement>} ref - The reference to the element to check for outside clicks.
+ * @param {RefObject<HTMLElement>} trendingSearchRef - The reference to the trending search items container.
+ * @param {() => void} onClose - The callback function to be called when the user clicks outside of the element.
+ */
 export const useOutsideClick = ({
   ref,
   onClose,

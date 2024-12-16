@@ -5,9 +5,13 @@ import { GifCard } from "../components/ui/gif";
 import { Gif } from "../types/types";
 import { useGifContext } from "../context/GifContext";
 import { capitalize } from "../lib/utils";
-import { CircleX, Loader2, UserX } from "lucide-react";
+import { CircleX, Loader2 } from "lucide-react";
 import { Button } from "../components/ui/button";
 
+
+/**
+ * Home page to display trending gifs   
+*/
 const Home = () => {
     const [trendingGifs, setTrendingGifs] = useState<Array<Gif>>([]);
     const [limit] = useState<number>(10);
@@ -19,6 +23,10 @@ const Home = () => {
 
     const ref = useRef<HTMLDivElement>(null);
 
+    /**
+     * Fetch trending gifs based on the current tab
+     * @param reset - whether to reset the offset
+     */
     const fetchTrendingGifs = useCallback(async (reset: boolean = false) => {
         if (isLoading) return;
         const abortController = new AbortController();
@@ -65,7 +73,7 @@ const Home = () => {
                 abortController.abort();
             }
         }
-    }, [currentTab, prevTab, offset, trendingGifs]);
+    }, [offset, trendingGifs]);
 
     const handleShowMore = () => {
         fetchTrendingGifs(false);

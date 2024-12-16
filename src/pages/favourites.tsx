@@ -4,6 +4,9 @@ import { GifCard } from '../components/ui/gif'
 import { Gif } from '../types/types'
 import { Button } from '../components/ui/button'
 
+/**
+ * Page to display favourites
+ */
 const Favourites = () => {
     const { favourites, clearFavourites } = useGifContext()
 
