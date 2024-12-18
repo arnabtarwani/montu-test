@@ -1,12 +1,13 @@
 import { GIPHY_API_KEY, GIPHY_BASE_URL } from "../lib/constants"
 
-export const APIWrapper = async ({ endpoint, method, payload, params, abortController }: {
+export const APIWrapper = async ({ endpoint, method, payload, params }: {
     endpoint: string,
     method: string,
     payload?: any,
     params?: Record<string, any>,
-    abortController?: AbortController
 }) => {
+    const abortController = new AbortController()
+
     try {
         const queryParams = new URLSearchParams(params)
 
@@ -28,5 +29,7 @@ export const APIWrapper = async ({ endpoint, method, payload, params, abortContr
         return data
     } catch (error) {
         throw error;
+    } finally {
+        return abortController.abort();
     }
 }
